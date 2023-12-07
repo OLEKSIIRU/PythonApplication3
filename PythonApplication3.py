@@ -1,32 +1,56 @@
-from math import *
-print("Ruudu karakteristikud")
-a = float(input('Sisesta ruudu külje pikkus => '))
-S = a**2
-print("Ruudu pindala", S)
-P = 4*a
-print("Ruudu ümbermõõt", P)
-di = a * sqrt(2)
-print("Ruudu diagonaal", round(di, 2))
+print("*** ИГРЫ С ЧИСЛАМИ ***")
 print()
-
-print("Ristküliku karakteristikud")
-b = float(input("Sisesta ristküliku 1. külje pikkus => "))
-c = float(input("Sisesta ristküliku 2. külje pikkus => "))
-S = b * c
-print("Ristküliku pindala", S)
-P = 2 * (b + c)
-print("Ristküliku ümbermõõt", P)
-di = sqrt(b**2+c**2)
-print("Ristküliku diagonaal", round(di, 2))
-print()
-
-print("Ringi karakteristikud")
-r = float(input("Sisesta ringi raadiuse pikkus => "))
-d = 2 * r
-print("Ringi läbimõõt", d)
-S = pi * r**2
-print("Ringi pindala", round(S, 2))
-C = 2 * pi * r
-print("Ringjoone pikkus", round(C, 2))
-
-#Исправлена первая строка, чтобы математические функции работали. Далее исправление sqrt.math. Добвление функции float. Исправление синтаксических ошибок.
+#'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+while 1:
+    try:
+        a = (abs(int(input("Введите целое число => "))))
+        break
+    except TypeError:
+         print("Это не целое число")
+#'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+if a==0:
+    print("Нет смысла ничего делать с нулём")
+else:
+#'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    print("Определяем, сколько в числе чётных и сколько нечётных цифр")
+    print()
+    c=b=a #c=b=a=453
+    paaris =0
+    paaritu = 0
+    while b > 0:
+            if b % 2 == 0:
+                    paaris += 1
+            else:
+                    paaritu += 1
+            b  //= 10
+   #b=0 
+    print("Чётных цифр:",paaris)
+    print("Нечётных цифр:",paaritu)
+    print()
+#''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    print("*Переворачиваем* введённое число")
+    print()
+    b=0 #c=453 a=453 b=0 
+    while a > 0:    # a=453 a=45 a=4
+        n = a % 10  # n=3   n=5  n=4
+        a = a // 10 # a=45  a=4  a=0
+        b = b * 10  # b=0   b=30 b=350
+        b += n      # b=3   b=35 b=354
+    print("*Перевёрнутое* число", b)
+    print()
+#''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    print(("Проверяем гипотезу Сиракуз"))
+    print()
+    #c=453
+    if c % 2 == 0:
+        print(c," чётное число. Делим на 2.")
+    else:
+        print(c," нечётное число. Умножаем на 3, прибавляем 1 и делим на 2.")
+    while c != 1:
+            if c % 2 == 0:
+                    c = c / 2
+            else:
+                    c == (3*c + 1) / 2
+            print(int(c), end="")
+    print()
+    print("Гипотеза верна")
